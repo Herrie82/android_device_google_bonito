@@ -75,10 +75,10 @@ BOARD_USES_METADATA_PARTITION := true
 TARGET_RECOVERY_WIPE := device/google/bonito/recovery.wipe
 TARGET_RECOVERY_FSTAB := device/google/bonito/fstab.hardware
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-TARGET_RECOVERY_UI_LIB := \
-  librecovery_ui_bonito \
-  libnos_citadel_for_recovery \
-  libnos_for_recovery
+#TARGET_RECOVERY_UI_LIB := \
+#  librecovery_ui_bonito \
+#  libnos_citadel_for_recovery \
+#  libnos_for_recovery
 
 BOARD_AVB_ENABLE := true
 BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
