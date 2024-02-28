@@ -120,9 +120,9 @@ MASTER_SIDE_CP_TARGET_LIST := sdm710 # ION specific settings
 # A/B support
 PRODUCT_PACKAGES += \
     otapreopt_script \
-    cppreopts.sh \
-    update_engine \
-    update_verifier
+    cppreopts.sh 
+#    update_engine \
+#    update_verifier
 
 # Use Sdcardfs
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -161,13 +161,13 @@ PRODUCT_STATIC_BOOT_CONTROL_HAL := \
     libcutils
 
 PRODUCT_PACKAGES += \
-    update_engine_sideload \
+#    update_engine_sideload \
     sg_write_buffer
 
 # The following modules are included in debuggable builds only.
 PRODUCT_PACKAGES_DEBUG += \
     bootctl \
-    update_engine_client
+#    update_engine_client
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
