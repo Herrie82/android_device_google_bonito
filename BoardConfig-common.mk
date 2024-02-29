@@ -225,3 +225,11 @@ BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/b4s4-setup.sh
 BOARD_USES_SDM845_QCRIL := true
 
 -include vendor/google/bonito/BoardConfigVendor.mk
+
+# Activate vndk-lite
+PRODUCT_TREBLE_LINKER_NAMESPACES_OVERRIDE := true
+# To avoid having a symlink vendor->system/vendor, build a vendor image
+BOARD_USES_VENDORIMAGE := true
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_VENDOR := vendor
+BOARD_VENDORIMAGE_PARTITION_SIZE := 283115520
