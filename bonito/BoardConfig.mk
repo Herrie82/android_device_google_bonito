@@ -21,4 +21,4 @@ TARGET_BOOTLOADER_BOARD_NAME := bonito
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 165
 
 include device/google/bonito/BoardConfig-common.mk
--include vendor/google_devices/bonito/proprietary/BoardConfigVendor.mk
+-include vendor/google/bonito/BoardConfigVendor.mk

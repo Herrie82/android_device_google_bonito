@@ -2,8 +2,8 @@
 TARGET_SCREEN_HEIGHT := 2160
 TARGET_SCREEN_WIDTH := 1080
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Halium stuff.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/halium.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/google/bonito/aosp_bonito.mk)
@@ -23,4 +23,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := google/bonito/bonito:9/PQ3B.190605.006/5560048:user/release-keys
 
-$(call inherit-product-if-exists, vendor/google/bonito/bonito-vendor.mk)
+$(call inherit-product, vendor/google/bonito/bonito-vendor.mk)

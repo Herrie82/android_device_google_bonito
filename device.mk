@@ -22,7 +22,9 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/qcom/sdm710 \
-    vendor/qcom/sdm710
+    vendor/qcom/sdm710 \
+    vendor/google/bonito \
+    vendor/google/sargo \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true
@@ -59,10 +61,6 @@ LOCAL_PATH := device/google/bonito
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 $(call inherit-product, $(LOCAL_PATH)/utils.mk)
-
-ifeq ($(wildcard vendor/google_devices/bonito/proprietary/device-vendor-bonito.mk),)
-    BUILD_WITHOUT_VENDOR := true
-endif
 
 PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_SHIPPING_API_LEVEL := 28
