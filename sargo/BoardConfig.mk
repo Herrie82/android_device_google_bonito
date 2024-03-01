@@ -22,4 +22,3 @@ TARGET_RECOVERY_UI_MARGIN_HEIGHT := 20
 
 include device/google/bonito/BoardConfig-common.mk
 -include vendor/google/sargo/BoardConfigVendor.mk
--include vendor/google/bonito/BoardConfigVendor.mk

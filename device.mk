@@ -23,7 +23,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/qcom/sdm710 \
     vendor/qcom/sdm710 \
-    vendor/google/bonito \
     vendor/google/sargo \
 
 PRODUCT_PROPERTY_OVERRIDES += \

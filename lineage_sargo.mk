@@ -25,4 +25,3 @@ BUILD_FINGERPRINT := google/sargo/sargo:9/PQ3B.190605.006/5560048:user/release-k
 
 # Include sargo before bonito to use sargo versions of blobs if they exist
 $(call inherit-product, vendor/google/sargo/sargo-vendor.mk)
-$(call inherit-product, vendor/google/bonito/bonito-vendor.mk)

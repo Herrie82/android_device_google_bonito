@@ -20,7 +20,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 $(call inherit-product, device/google/bonito/device-sargo.mk)
 $(call inherit-product, vendor/google/sargo/sargo-vendor.mk)
-$(call inherit-product, vendor/google/bonito/bonito-vendor.mk)
 
 #PRODUCT_PACKAGES += \
 #    Dialer \
