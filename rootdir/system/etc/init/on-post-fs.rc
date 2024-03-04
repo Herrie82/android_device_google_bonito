@@ -1,0 +1,76 @@
+on early-init
+    rm /data/property/persistent_properties
+
+on boot
+    setprop persist.rcs.supported 0
+
+on post-fs
+    setprop vendor.qcom.time.set true
+
+service bootanim /system/bin/bootanimation_HALIUM_DISABLED
+    disabled
+    oneshot
+    override
+
+service ppd ppd_HALIUM_DISABLED
+    override
+
+# Disable IMS services
+service imsqmidaemon imsqmidaemon_HALIUM_DISABLED
+    override
+
+service imsdatadaemon imsdatadaemon_HALIUM_DISABLED
+    override
+
+service imsrcsservice imsrcsd_HALIUM_DISABLED
+    override
+
+service ims_rtp_daemon ims_rtp_daemon_HALIUM_DISABLED
+    override
+
+on property:init.svc.imsqmidaemon=running
+    stop imsqmidaemon
+    setprop vendor.ims.QMI_DAEMON_STATUS ""
+
+on property:init.svc.imsdatadaemon=running
+    stop imsdatadaemon
+
+on property:init.svc.ims_rtp_daemon=running
+    stop ims_rtp_daemon
+
+on property:init.svc.imsrcsservice=running
+    stop imsrcsservice
+
+# Disable time_daemon
+service time_daemon time_daemon_HALIUM_DISABLED
+    override
+
+# Disable Android audio HAL, PulseAudio is our alternative
+service vendor.audio-hal-2-0 android.hardware.audio@2.0-service_HYBRIS_DISABLED
+    disabled
+    oneshot
+    override
+
+# Rely on a non-spamming thermal management solution
+service vendor.thermal-engine /vendor/bin/thermal-engine_HYBRIS_DISABLED
+    disabled
+    oneshot
+    override
+
+# Reduce log spam from unneeded service
+service storaged /system/bin/storaged_HALIUM_DISABLED
+    class main
+    capabilities DAC_READ_SEARCH
+    priority 10
+    file /d/mmc0/mmc0:0001/ext_csd r
+    writepid /dev/cpuset/system-background/tasks
+    user root
+    group package_info
+    disabled
+    oneshot
+    override
+
+service usbd /system/bin/usbd_HALIUM_DISABLED
+    disabled
+    oneshot
+    override

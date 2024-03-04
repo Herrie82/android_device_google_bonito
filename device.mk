@@ -796,3 +796,17 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Increment the SVN for any official public releases
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.build.svn=2
+
+# systemimage build fix
+PRODUCT_PACKAGES += \
+	fec
+
+# Misc libraries
+PRODUCT_PACKAGES += \
+	libxml2
+
+# Halium override files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/system/etc/init/on-post-fs.rc:system/etc/init/on-post-fs.rc \
+    $(LOCAL_PATH)/rootdir/system/system/bin/on-post-fs-data.sh:system/bin/on-post-fs-data.sh
+
